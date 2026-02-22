@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "User" ADD COLUMN     "avatar" TEXT,
+ADD COLUMN     "banner" TEXT,
+ADD COLUMN     "bio" TEXT,
+ADD COLUMN     "status" TEXT NOT NULL DEFAULT 'online',
+ADD COLUMN     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
