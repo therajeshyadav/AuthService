@@ -10,7 +10,10 @@ const oauthRoutes = require("./routes/oauthRoutes");
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:8080",
+  origin: [
+    "http://localhost:8080",
+    "http://10.205.15.217:8080"  // Allow external IP access
+  ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -36,6 +39,6 @@ app.get("/", (req, res) => {
 
 const PORT = 5000;
 
-app.listen(PORT, () => {
-  console.log(`Auth service running on port ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Auth service running on port ${PORT} (accessible externally)`);
 });
