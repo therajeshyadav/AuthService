@@ -11,8 +11,8 @@ const app = express();
 
 const corsOptions = {
   origin: [
-    "http://localhost:8080",
-    "http://10.205.15.217:8080"  // Allow external IP access
+    process.env.FRONTEND_URL || "http://localhost:8080",
+    "http://10.205.15.217:8080"  // Allow external IP access for development
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
