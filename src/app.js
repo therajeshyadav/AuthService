@@ -11,8 +11,10 @@ const app = express();
 
 const corsOptions = {
   origin: [
+<<<<<<< Updated upstream
     process.env.FRONTEND_URL || "http://localhost:8080",
-    "http://10.205.15.217:8080"  // Allow external IP access for development
+    "https://nexus-chat-topaz.vercel.app",
+    "https://nexuschat.duckdns.org"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
